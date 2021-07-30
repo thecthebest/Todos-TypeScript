@@ -4,9 +4,12 @@ import React from "react";
 
 //FC = is a function and acts as functional component
 //merge our own object with the base object type(props)      
-const Todos: React.FC<{items: string[]}> = (props) => {
+const Todos: React.FC<{ items: string[] }> = (props) => {
     return (
         <ul>
+            {props.items.map((item) => {
+                return <li>{item}</li>
+            })}
         </ul>
     );
 }
