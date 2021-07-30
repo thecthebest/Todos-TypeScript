@@ -1,5 +1,6 @@
 import React from "react";
 import Todo from "../models/todo";
+import TodoItem from "./TodoItem";
 //A functional component out of a box can be converted
 //to generic funbction
 
@@ -9,7 +10,7 @@ const Todos: React.FC<{ items: Todo[] }> = (props) => {
     return (
         <ul>
             {props.items.map((item) => {
-                return <li key={item.id}>{item.text}</li>
+                return <TodoItem key={item.id} text={item.text} />
             })}
         </ul>
     );
