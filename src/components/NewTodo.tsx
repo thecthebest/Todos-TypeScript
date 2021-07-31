@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-
+import classes from "./NewTodo.module.css"
 const NewTodo: React.FC<{onAddTodo: (text: string)=>void}> = (props) => {
     //Ref is a generic type out of the box
     //It is required to inform what type of data is stored
@@ -19,7 +19,7 @@ const NewTodo: React.FC<{onAddTodo: (text: string)=>void}> = (props) => {
         props.onAddTodo(eneteredText);
     };
     return (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className={classes.form}>
             <label htmlFor="text">Todo Text</label>
             {/*ref out of a box could be assigned to other values null is needed*/}
             <input ref={todoTextInputRef} type="text" id="text"/>
