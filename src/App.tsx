@@ -8,9 +8,12 @@ function App() {
     new Todo("React"),
     new Todo("typeScript")
   ];
+  const addTodoHandler = (text: string) => {
+    console.log(text);
+  };
   return (
     <div className="App">
-      <NewTodo />
+      <NewTodo onAddTodo={addTodoHandler}/>
       <Todos items={todos} />
     </div>
   );

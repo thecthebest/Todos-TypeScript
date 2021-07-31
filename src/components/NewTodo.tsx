@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 
-const NewTodo: React.FC<{}> = () => {
+const NewTodo: React.FC<{onAddTodo: (text: string)=>void}> = (props) => {
     //Ref is a generic type out of the box
     //It is required to inform what type of data is stored
     //use <> to explicitly set the type of ref needed to be created
@@ -16,6 +16,7 @@ const NewTodo: React.FC<{}> = () => {
         if (eneteredText.trim().length === 0) {
             return;
         }
+        props.onAddTodo(eneteredText);
     };
     return (
         <form onSubmit={submitHandler}>
