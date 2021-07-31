@@ -9,6 +9,13 @@ const NewTodo: React.FC<{}> = () => {
     const todoTextInputRef = useRef<HTMLInputElement>(null);
     const submitHandler = (e: React.FormEvent) => {
         e.preventDefault();
+        const eneteredText = todoTextInputRef.current!.value;
+        //? may not be set to a value when it is used
+        //! use only when it is sure that when this 
+        //code is run the value is not null
+        if (eneteredText.trim().length === 0) {
+            return;
+        }
     };
     return (
         <form onSubmit={submitHandler}>
